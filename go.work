@@ -1,3 +1,5 @@
 go 1.21.3
 
 use ./5
+use ./6
+use ./template

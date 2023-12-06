@@ -13,7 +13,7 @@ import (
 
 func One() {
 	lowest := int64(-1)
-    file, err := os.Open("input.txt")
+    file, err := os.Open("test1.txt")
     if err != nil {
         log.Fatal(err)
     }
@@ -35,8 +35,7 @@ func One() {
 		maps[i] = util.NewRangeMap()
 		// scan in entries, break on blank line
 		for scanner.Scan() {
-			temp := scanner.Text()
-			line := strings.Fields(temp)
+			line := strings.Fields(scanner.Text())
 			if len(line) == 0 {
 				break
 			}
