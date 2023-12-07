@@ -52,10 +52,12 @@ func (h *Hand) AddJokers() {
 
 func (h *Hand) Rank() int {
 	h.AddJokers()
-	// Five of a kind
-	if len(h.Count) == 1 {
+
+	switch len(h.Count) {
+	case 1:
+		// Five of a kind
 		return 7
-	} else if len(h.Count) == 2 {
+	case 2:
 		// Four of a kind
 		for _, count := range h.Count {
 			if count == 4 {
@@ -64,7 +66,7 @@ func (h *Hand) Rank() int {
 		}
 		// Full house
 		return 5
-	} else if len(h.Count) == 3 {
+	case 3:
 		// Three of a kind
 		for _, count := range h.Count {
 			if count == 3 {
@@ -73,13 +75,13 @@ func (h *Hand) Rank() int {
 		}
 		// Two pair
 		return 3
-	} else if len(h.Count) == 4 {
+	case 4:
 		//One pair
 		return 2
-	} 
-
-	// High card
-	return 1
+	default:
+		// High Card
+		return 1
+	}
 }
 
 func (h *Hand) String() string {
