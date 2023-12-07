@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"advent.com/template/src"
+	"advent.com/7/src"
 )
 
 func main() {
@@ -17,5 +17,7 @@ func main() {
 			src.One()
 		case "two":
 			src.Two()
+		default:
+			log.Fatal("Commands: one, two")
 	}
 }
