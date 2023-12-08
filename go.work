@@ -6,5 +6,6 @@ use ./6
 
 use (
 	./7
+	./8
 	./template
 )
