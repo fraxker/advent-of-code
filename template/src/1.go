@@ -7,7 +7,7 @@ import (
 )
 
 func One() {
-	file, err := os.Open("input.txt")
+	file, err := os.Open("test1.txt")
     if err != nil {
         log.Fatal(err)
     }
